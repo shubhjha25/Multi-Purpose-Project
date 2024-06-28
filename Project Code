@@ -1,0 +1,118 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    static int oin, iin; // oin = outer input, iin = inner input
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.println("                          WELCOME TO THIS PROGRAM...");
+        System.out.println("                         PROGRAM FOR MULTIPURPOSE USE ");
+        System.out.println("------------------------------------------------------------------------------------\n\n\n");
+        System.out.print(" Enter 1 For Calculation And 2 for Game: ");
+        oin = scanner.nextInt();
+
+        if (oin == 1) {
+            System.out.println("You Can Perform Any Of These Tasks\n[ 1--> S.I.      2--> C.I.     3--> Temperature Conversion      4--> Print Table ]");
+            System.out.print("Enter Your Choice... ");
+            iin = scanner.nextInt();
+            System.out.println("-----------------------------------------------------------------------------------");
+
+            switch (iin) {
+                case 1: {
+                    float p, r, t, si; // p = principle amount, r = rate, t = time, si = simple interest
+                    clearScreen();
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.println("                          WELCOME TO THIS PROGRAM...");
+                    System.out.println("                         PROGRAM FOR MULTIPURPOSE USE ");
+                    System.out.println("------------------------------------------------------------------------------------\n\n\n");
+                    System.out.println("To find Simple Interest Provide the following Data:");
+                    System.out.print("Enter Principle Amount: Rs ");
+                    p = scanner.nextFloat();
+                    System.out.print("Enter Rate (in %): ");
+                    r = scanner.nextFloat();
+                    System.out.print("Enter Time (in years): ");
+                    t = scanner.nextFloat();
+                    si = (p * r * t) / 100;
+                    System.out.println("\nSimple Interest of following data is Rs." + si);
+                    System.out.println("Total Amount after " + t + " years is Rs." + (si + p) + "\n\n");
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.println("Enter 1 for Main Menu OR Press Any key to Exit.");
+                    iin = scanner.nextInt();
+                    clearScreen();
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.println("                          WELCOME TO THIS PROGRAM...");
+                    System.out.println("                         PROGRAM FOR MULTIPURPOSE USE ");
+                    System.out.println("------------------------------------------------------------------------------------\n\n\n");
+
+                    if (iin == 1) {
+                        System.out.println("       Redirecting to Main Menu...");
+                        clearScreen();
+                        main(args);
+                    } else {
+                        System.out.println("           Thank You...");
+                    }
+                    break;
+                }
+                case 2: {
+                    float p, r, t, amount; // p = principle amount, r = rate, t = time
+                    clearScreen();
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.println("                          WELCOME TO THIS PROGRAM...");
+                    System.out.println("                         PROGRAM FOR MULTIPURPOSE USE ");
+                    System.out.println("------------------------------------------------------------------------------------\n\n\n");
+                    System.out.println("To find Compound Interest annually Provide the following Data:");
+                    System.out.print("Enter Principle Amount: Rs. ");
+                    p = scanner.nextFloat();
+                    System.out.print("Enter Rate(in %): ");
+                    r = scanner.nextFloat();
+                    System.out.print("Enter Time (in years): ");
+                    t = scanner.nextFloat();
+                    amount = (float) (p * Math.pow((1 + r / 100), t));
+                    System.out.println("\nCompound Interest of following data is Rs." + (amount - p));
+                    System.out.println("Total Amount after " + t + " years is Rs." + amount);
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.println("Enter 1 for Main Menu OR Press Any key to Exit.");
+                    iin = scanner.nextInt();
+                    clearScreen();
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.println("                          WELCOME TO THIS PROGRAM...");
+                    System.out.println("                         PROGRAM FOR MULTIPURPOSE USE ");
+                    System.out.println("------------------------------------------------------------------------------------\n\n\n");
+
+                    if (iin == 1) {
+                        System.out.println("         Redirecting to Main Menu...");
+                        clearScreen();
+                        main(args);
+                    } else {
+                        System.out.println("           Thank You...");
+                        clearScreen();
+                    }
+                    break;
+                }
+                case 3: {
+                    float cel, fah;
+                    int temp;
+                    clearScreen();
+                    System.out.println("-----------------------------------------------------------------------------------");
+                    System.out.println("                          WELCOME TO THIS PROGRAM...");
+                    System.out.println("                         PROGRAM FOR MULTIPURPOSE USE ");
+                    System.out.println("------------------------------------------------------------------------------------\n\n\n");
+                    System.out.println("\nTo Convert temperature from Celsius to Fahrenheit enter 0 OR from Fahrenheit to Celsius enter 1");
+                    temp = scanner.nextInt();
+                    switch (temp) {
+                        case 0: {
+                            System.out.print("Enter temperature in Celsius: ");
+                            cel = scanner.nextFloat();
+                            fah = (cel * 9 / 5) + 32;
+                            System.out.println("\nTemperature in Fahrenheit: " + fah);
+                            break;
+                        }
+                        case 1: {
+                            System.out.print("Enter temperature in Fahrenheit: ");
+                            fah = scanner.nextFloat();
+                            cel = (fah - 32) * 5 / 9;
+                            System.out.println("\nTemperature in Celsius: " + cel);
+                            break;
+                        }
